@@ -16,3 +16,8 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+
+tasks.withType(Test) {
+    systemProperties = System.properties as Map<String, ?>
+    outputs.upToDateWhen { false }
+}
